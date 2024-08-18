@@ -9,6 +9,8 @@ To check layout use extension like [PerfectPixel](https://chromewebstore.google.
 - [375](https://ha308ing.github.io/t_four-horses-club/assets/design-375.png)
 - [1366](https://ha308ing.github.io/t_four-horses-club/assets/design-1366.png)
 
+[Task](https://forms.yandex.ru/surveys/10033975.d66cde35b078199afc83f1e9f11cb58c5cdb22e9/) from [hexlet assignments](https://github.com/Hexlet/ru-test-assignments)
+
 ## Notes
 
 ### postcss variables
