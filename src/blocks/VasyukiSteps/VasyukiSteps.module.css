@@ -1,0 +1,40 @@
+.container {
+  composes: block from global;
+
+  --inline-padding: 1.25rem;
+
+  padding-inline: var(--inline-padding);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-block-end: 7.5rem;
+}
+
+.steps {
+  position: relative;
+  max-inline-size: 100vw;
+  margin-block-end: 1.75rem;
+}
+
+.heading {
+  max-inline-size: 80ch;
+  align-self: flex-start;
+  margin-block-end: 0.075rem;
+  line-height: 2.6;
+}
+
+@media (--desktop) {
+  .container {
+    --inline-padding: 4.5rem;
+
+    margin-block-end: 10.9rem;
+  }
+
+  .heading {
+    margin-block-end: 2.775rem;
+  }
+
+  .controls {
+    display: none;
+  }
+}

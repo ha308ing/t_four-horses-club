@@ -1,0 +1,32 @@
+.container {
+  composes: block from global;
+
+  --inline-padding: 1.25rem;
+
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2.5rem;
+  align-items: center;
+  margin-block-end: 6.25rem;
+  padding-inline: var(--inline-padding);
+}
+
+@media (--desktop) {
+  .container {
+    --inline-padding: 4.5rem;
+
+    margin-block-end: 8.65rem;
+  }
+
+  .controls {
+    position: absolute;
+    inset-block-start: 0.3rem;
+    inset-inline-end: 4.5rem;
+    gap: 0.6rem;
+  }
+
+  .heading {
+    margin-block-end: 0.95rem;
+  }
+}
