@@ -11,7 +11,7 @@ interface IProps {
   participant: IParticipant;
 }
 
-const defaultAvatar = "/assets//participant.svg";
+const defaultAvatar = "./assets//participant.svg";
 
 export const Participant = forwardRef<HTMLElement, IProps>(
   ({ participant }, ref) => {

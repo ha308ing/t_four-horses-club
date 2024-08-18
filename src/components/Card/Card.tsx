@@ -23,7 +23,7 @@ export const Cards = forwardRef<HTMLUListElement, ICardsProps>(
             );
           })}
         </ul>
-        <img src="/assets/plane.png" className={styles.image} />
+        <img src="./assets/plane.png" className={styles.image} />
       </div>
     );
   },
