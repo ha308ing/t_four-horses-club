@@ -1,0 +1,126 @@
+.cards {
+  counter-set: c;
+  display: grid;
+  grid-template:
+    "one three four six seven" 150px
+    "two three five six seven" 150px / 100vw 100vw 100vw 100vw 100vw;
+  font-weight: 500;
+  padding-block-start: 8rem;
+  max-inline-size: 100vw;
+  overflow: hidden;
+}
+
+.card {
+  counter-increment: c;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  padding: 3.875rem 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  inline-size: 80vw;
+  min-inline-size: 335px;
+  margin: 0 auto;
+  background: url("/assets/texture.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card:nth-child(1) {
+  grid-area: one;
+}
+
+.card:nth-child(2) {
+  grid-area: two;
+  padding-block-start: 1.75rem;
+  background-position: 0 -150px;
+}
+
+.card:nth-child(3) {
+  grid-area: three;
+}
+
+.card:nth-child(4) {
+  grid-area: four;
+}
+
+.card:nth-child(5) {
+  grid-area: five;
+  padding-block-start: 1.75rem;
+  background-position: 0 -150px;
+}
+
+.card:nth-child(6) {
+  grid-area: six;
+}
+
+.card:nth-child(7) {
+  grid-area: seven;
+}
+
+.card::before {
+  --background-color: var(--white);
+
+  font-weight: 700;
+  flex-shrink: 0;
+  display: block;
+  content: counter(c);
+  padding: 0.5em;
+  inline-size: 2em;
+  block-size: 2em;
+  border-radius: 1em;
+  background-color: var(background-color);
+  text-align: center;
+  line-height: 1;
+}
+
+.image {
+  --image-width: 330px;
+
+  position: absolute;
+  inline-size: var(--image-width);
+  inset-block-start: 0;
+  inset-inline-start: calc(50vw - var(--image-width) / 2);
+}
+
+@media (--desktop) {
+  .cards {
+    grid-template:
+      "one two three" auto
+      "four five three" auto
+      "six seven seven" auto / 1fr 1fr 1fr;
+    gap: 1.25rem;
+    justify-items: stretch;
+    padding-block-start: initial;
+  }
+
+  .card {
+    padding-block: 1.275rem;
+    padding-inline-start: 1.05rem;
+    inline-size: 100%;
+    font-size: 1.25rem;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(5) {
+    padding-block: 1.175rem;
+    padding-inline-start: 1.05rem;
+    background-position: initial;
+  }
+
+  .card:nth-child(5) {
+    padding-inline-end: 6ch;
+  }
+
+  .card:nth-child(7) {
+    padding-inline-end: 40%;
+  }
+
+  .image {
+    inset-block: initial;
+    inset-inline: initial;
+    inset-block-end: 0;
+    inset-inline-end: -4rem;
+    inline-size: 32%;
+  }
+}

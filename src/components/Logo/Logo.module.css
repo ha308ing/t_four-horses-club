@@ -1,0 +1,36 @@
+.container {
+  --logo-color: var(--dark-grayish-orange);
+
+  display: flex;
+  flex-flow: row nowrap;
+  color: var(--logo-color);
+  gap: 0.3rem;
+}
+
+.image {
+  inline-size: 5rem;
+}
+
+.text {
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0.07ch;
+  font-size: 0.85rem;
+}
+
+@media (--desktop) {
+  .container {
+    gap: 0.2rem;
+  }
+
+  .image {
+    inline-size: 6rem;
+  }
+
+  .text {
+    letter-spacing: 0.03ch;
+    line-height: 1.1;
+    font-size: 1rem;
+  }
+}

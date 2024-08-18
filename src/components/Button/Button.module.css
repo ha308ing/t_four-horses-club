@@ -1,0 +1,44 @@
+.button {
+  @mixin sans-font 500;
+
+  --button-background: var(--white-transparent);
+  --button-color: var(--almost-black);
+  --border-color: transparent;
+
+  text-align: center;
+  padding-block: 0.65rem 1.25rem;
+  background: var(--button-background);
+  color: var(--button-color);
+  line-height: 1.3;
+  border-radius: 66px;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  inline-size: 100%;
+}
+
+.button:hover {
+  --button-background: var(--almost-black);
+  --button-color: var(--white);
+  --border-color: var(--button-background);
+}
+
+@media (--desktop) {
+  .button {
+    --button-background: transparent;
+    --border-color: var(--button-color);
+
+    padding-block: 0.85rem;
+  }
+}
+
+.primary {
+  --button-background: var(--almost-black);
+  --button-color: var(--white);
+  --border-color: var(--button-background);
+}
+
+.primary:hover {
+  --button-background: var(--soft-orange);
+  --button-color: var(--almost-black);
+}

@@ -1,0 +1,57 @@
+.heading {
+  @mixin serif-font;
+
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
+.heading2 {
+  composes: heading;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+.subheading {
+  --subheading-color: var(--dark-blue);
+
+  color: var(--subheading-color);
+  font-size: 1.125rem;
+  margin-block-end: 1.25rem;
+  text-align: start;
+  inline-size: 100%;
+}
+
+.combo {
+  inline-size: 100%;
+}
+
+.comboHeading2 {
+  composes: heading2;
+  margin-block-end: 0.95rem;
+  flex-grow: 0;
+}
+
+.comboSubHeading {
+  composes: subheading;
+  margin-block-end: 1.25rem;
+  line-height: 1.1;
+}
+
+@media (--desktop) {
+  .heading2 {
+    font-size: 3.375rem;
+  }
+
+  .comboHeading2 {
+    display: inline;
+    margin-block-end: 0.75rem;
+  }
+
+  .comboSubHeading {
+    padding-inline-start: 1.5ch;
+    display: inline-block;
+    max-inline-size: 35%;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+}

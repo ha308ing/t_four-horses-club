@@ -1,0 +1,63 @@
+.table {
+  --table-color: var(--light-gray);
+  --color: var(--dark-gray);
+
+  border-collapse: collapse;
+  border-color: var(--table-color);
+  inline-size: 100%;
+  color: var(--color);
+  font-size: 1.25rem;
+}
+
+.key {
+  opacity: 0.7;
+}
+
+.value {
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.75rem 0.8rem;
+  padding-block: 1rem 0.9rem;
+}
+
+.row:not(:last-child) {
+  border-block-end: 1px solid var(--light-gray);
+}
+
+.oldPrice {
+  --strike-color: var(--bright-red);
+
+  text-decoration: line-through var(--strike-color) 2px;
+  margin-inline-end: 0.6rem;
+}
+
+@media (--desktop) {
+  .row {
+    display: table-row;
+  }
+
+  .key {
+    inline-size: 43.5%;
+  }
+
+  .value {
+    padding-block: 0.8em;
+    padding-inline-start: 1rem;
+  }
+
+  .key:first-child {
+    border-inline-end: 1px solid var(--light-gray);
+  }
+
+  .row:first-child > td {
+    padding-block: 0 0.8em;
+  }
+
+  .row:last-child > td {
+    padding-block: 0.8em 0;
+  }
+}

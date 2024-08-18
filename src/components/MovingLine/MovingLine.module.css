@@ -1,0 +1,59 @@
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.container {
+  max-inline-size: 100%;
+  overflow: hidden;
+}
+
+.list {
+  @mixin serif-font;
+
+  --background-color: var(--bright-red);
+  --color: var(--white);
+
+  background-color: var(--background-color);
+  color: var(--color);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  list-style: none;
+  animation-name: scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 100s;
+  inline-size: fit-content;
+}
+
+.lineString::before {
+  --divider: attr(data-divider);
+
+  content: var(--divider);
+  font-size: 0.7em;
+  line-height: 1.5;
+  margin-inline: 1.3ch;
+}
+
+.lineString {
+  white-space: nowrap;
+  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1rem;
+  padding-block: 0.5rem;
+}
+
+@media (--desktop) {
+  .lineString {
+    font-size: 1.4rem;
+    padding-block: 1rem;
+  }
+}

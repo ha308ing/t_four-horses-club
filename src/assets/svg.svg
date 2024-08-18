@@ -1,0 +1,13 @@
+<svg  xmlns="http://www.w3.org/2000/svg">
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" id="carousel-button-left">
+    <circle cx="18" cy="18" r="18" transform="rotate(-180 18 18)" fill="currentColor" ></circle>
+    <path d="M20.0766 24.923L13.1536 17.9999L20.0766 11.0768" stroke="white" stroke-width="1.63636" stroke-linecap="square"></path>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" id="carousel-button-right">
+    <circle cx="18" cy="18" r="18" fill="currentColor"></circle>
+    <path d="M15.9234 11.0769L22.8464 18L15.9234 24.9231" stroke="white" stroke-width="1.63636" stroke-linecap="square"></path>
+  </symbol>
+  <symbol width="10" height="10" viewBox="0 0 10 10" fill="red" xmlns="http://www.w3.org/2000/svg" id="carousel-indicator">
+    <circle cx="5" cy="5" r="5" fill="currentColor"></circle>
+  </symbol>
+</svg>

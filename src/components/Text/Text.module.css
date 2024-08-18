@@ -1,0 +1,33 @@
+.block {
+  display: block;
+  inline-size: 100%;
+}
+
+.text {
+  --color: var(--dark-gray);
+
+  @mixin serif-font;
+
+  color: var(--color);
+}
+
+.sans {
+  @mixin sans-font;
+}
+
+.subtle {
+  --color: var(--dark-blue);
+
+  color: var(--color);
+}
+
+.highlight {
+  --color: var(--bright-red);
+
+  color: var(--color);
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
