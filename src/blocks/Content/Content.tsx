@@ -20,7 +20,7 @@ export const Content = () => (
     </Text>
 
     <img
-      src="/assets/players.png"
+      src="./assets/players.png"
       alt="4 guys playing chess on one board in the back, and one guy on the front lpaying by himself black vs black"
       className={styles.imagePlayers}
     />
@@ -28,7 +28,7 @@ export const Content = () => (
     <VisitText className={styles.visitTextMobile} />
 
     <img
-      src="/assets/player.png"
+      src="./assets/player.png"
       alt="a pawn beats a knight, a player playing with black has hard time thinking"
       className={styles.imagePlayer}
     />

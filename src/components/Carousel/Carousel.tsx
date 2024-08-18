@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
-import svg from "../../assets/svg.svg";
 import styles from "./Carousel.module.css";
+
+const svg = "./assets/svg.svg";
 
 interface ICarouselArrowProps {
   isLeft?: boolean;
