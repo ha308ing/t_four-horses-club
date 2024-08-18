@@ -8,7 +8,7 @@ interface IProps {
 export const Logo: FC<IProps> = ({ className = "" }) => (
   <div className={`${styles.container} ${className}`}>
     <div className={styles.image}>
-      <img src="/assets/logo.svg" />
+      <img src="./assets/logo.svg" />
     </div>
     <div className={styles.text}>
       клуб
