@@ -2,6 +2,7 @@ import { Text } from "../../components";
 import { tableSchedule as tableContent } from "../../data/tableSchedule";
 import { Table } from "../../components";
 import styles from "./Content.module.css";
+import { ANCHORS } from "../../anchors";
 
 const VisitText = ({ className = "" }) => (
   <Text block={false} className={`${styles.paragraph} ${className}`}>
@@ -13,7 +14,7 @@ const VisitText = ({ className = "" }) => (
 );
 
 export const Content = () => (
-  <section className={styles.container}>
+  <section className={styles.container} id={ANCHORS.SUPPORT}>
     <Text block={true} uppercase={true} className={styles.paragraph}>
       <Text block={true}>Чтобы поддержать</Text> Международный васюкинский
       турнир <VisitText className={styles.visitTextDesktop} />
