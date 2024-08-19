@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import styles from "./Carousel.module.css";
 
 const svg = "./assets/svg.svg";
@@ -77,6 +77,7 @@ interface ICarouselControlsProps {
   nextHandler?: (activeIndex: number) => void;
   prevHandler?: (activeIndex: number) => void;
   className?: string;
+  autoScroll?: boolean;
 }
 
 export const CarouselControls: FC<ICarouselControlsProps> = ({
@@ -87,12 +88,13 @@ export const CarouselControls: FC<ICarouselControlsProps> = ({
   className = "",
   nextHandler,
   prevHandler,
+  autoScroll = false,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [disabledLeft, setDisabledLeft] = useState(true);
   const [disabledRight, setDisabledRight] = useState(false);
 
-  const setNext = () => {
+  const setNext = useCallback(() => {
     if (activeIndex + step >= size - 1) {
       setDisabledRight(true);
     } else {
@@ -105,7 +107,21 @@ export const CarouselControls: FC<ICarouselControlsProps> = ({
       return newIndex;
     });
     setDisabledLeft(false);
-  };
+  }, [activeIndex, nextHandler, size, step]);
+
+  useEffect(() => {
+    let interval: number;
+
+    if (autoScroll) {
+      interval = window.setInterval(() => {
+        setNext();
+      }, 4000);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [autoScroll, setNext]);
 
   const setPrev = () => {
     if (activeIndex - step <= 0) {
