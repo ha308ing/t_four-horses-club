@@ -1,4 +1,5 @@
-import { Button, Logo, Text } from "../../components";
+import { ANCHORS } from "../../anchors";
+import { ButtonLink, Logo, Text } from "../../components";
 import styles from "./Hero.module.css";
 
 export const Hero = () => (
@@ -18,13 +19,17 @@ export const Hero = () => (
         </Text>
 
         <div className={styles.buttons}>
-          <Button primary={true} className={styles.button}>
+          <ButtonLink
+            primary={true}
+            className={styles.button}
+            href={`#${ANCHORS.SUPPORT}`}
+          >
             <span className={styles.firstWord}>Поддержать</span> шахматную мысль
-          </Button>
+          </ButtonLink>
 
-          <Button className={styles.button}>
+          <ButtonLink className={styles.button} href={`#${ANCHORS.TOURNAMENT}`}>
             <span className={styles.firstWord}>Подробнее</span> о турнире
-          </Button>
+          </ButtonLink>
         </div>
       </div>
     </div>

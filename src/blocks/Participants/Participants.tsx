@@ -7,6 +7,7 @@ import {
 } from "../../components";
 import { participants as participantsData } from "../../data";
 import { useMobile } from "../../hooks";
+import { ANCHORS } from "../../anchors";
 
 const elements: HTMLElement[] = [];
 
@@ -20,7 +21,7 @@ export const Participants: FC = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id={ANCHORS.TOURNAMENT}>
       <Heading2 className={styles.heading}>Участники турнира</Heading2>
       <div className={styles.participants}>
         <Component
