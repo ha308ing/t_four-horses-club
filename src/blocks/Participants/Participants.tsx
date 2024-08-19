@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback, useRef } from "react";
 import styles from "./Participants.module.css";
 import {
   Heading2,
@@ -8,16 +8,15 @@ import {
 import { participants as participantsData } from "../../data";
 import { useMobile } from "../../hooks";
 
-const elements: HTMLElement[] = [];
-
 export const Participants: FC = () => {
   const { isMobile } = useMobile();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const groupSize = isMobile ? 1 : 3;
 
-  const setScrollElement = (index: number) => (element: HTMLElement) => {
-    elements[index * groupSize] = element;
-  };
+  const scrollHandler = useCallback((index: number) => {
+    containerRef.current?.scrollTo(index * containerRef.current.clientWidth, 0);
+  }, []);
 
   return (
     <section className={styles.container}>
@@ -26,7 +25,7 @@ export const Participants: FC = () => {
         <Component
           participants={participantsData}
           groupSize={groupSize}
-          refCreator={setScrollElement}
+          ref={containerRef}
         />
       </div>
       <CarouselControls
@@ -35,22 +34,9 @@ export const Participants: FC = () => {
         withDisabled={false}
         step={groupSize}
         className={styles.controls}
-        nextHandler={(index) => {
-          elements[
-            index % groupSize ? Math.floor(index - (index % groupSize)) : index
-          ].scrollIntoView({
-            block: "nearest",
-            inline: "center",
-          });
-        }}
-        prevHandler={(index) => {
-          elements[
-            index % groupSize ? Math.floor(index - (index % groupSize)) : index
-          ].scrollIntoView({
-            block: "nearest",
-            inline: "center",
-          });
-        }}
+        nextHandler={scrollHandler}
+        prevHandler={scrollHandler}
+        autoScroll={true}
       />
     </section>
   );

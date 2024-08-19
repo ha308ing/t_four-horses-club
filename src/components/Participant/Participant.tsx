@@ -33,7 +33,7 @@ export const Participant = forwardRef<HTMLElement, IProps>(
 interface IParticipantsProps {
   groupSize?: number;
   participants: IParticipant[];
-  refCreator: (index: number) => (element: HTMLDivElement) => void;
+  refCreator?: (index: number) => (element: HTMLDivElement) => void;
 }
 
 export const Participants = forwardRef<HTMLDivElement, IParticipantsProps>(
@@ -58,7 +58,11 @@ export const Participants = forwardRef<HTMLDivElement, IParticipantsProps>(
     return (
       <section className={styles.participants} ref={ref}>
         {participantsGroupped.map((group, index) => (
-          <div ref={refCreator(index)} key={index} className={styles.group}>
+          <div
+            ref={refCreator && refCreator(index)}
+            key={index}
+            className={styles.group}
+          >
             {group.map((participant, index) => (
               <Participant participant={participant} key={index} />
             ))}
